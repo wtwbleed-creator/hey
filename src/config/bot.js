@@ -23,8 +23,8 @@ export const botConfig = {
     // 5 = Competing
     activities: [
       {
-        name: "", // required by Discord API, not shown in the client
-        state: "",     // this is what people actually see
+        name: "sup ", // required by Discord API, not shown in the client
+        state: "sup",     // this is what people actually see
         type: 4,               // Custom
       },
     ],
@@ -36,13 +36,13 @@ export const botConfig = {
   commands: {
     // Bot owner user IDs (comma-separated in OWNER_IDS env var).
     // Owners can access owner/admin-level bot commands.
-    owners: process.env.OWNER_IDS?.split("1515421082041974858").map((id) => id.trim()).filter(Boolean) || [],
+    owners: process.env.OWNER_IDS?.split(",").map((id) => id.trim()).filter(Boolean) || [],
 
     // Default wait time between command uses (in seconds).
     defaultCooldown: 3,
 
     // If true, old commands are removed before re-registering.
-    deleteCommands: true,
+    deleteCommands: false,
 
     // Optional server ID retained for tutorial compatibility; not used for command registration.
     testGuildId: process.env.TEST_GUILD_ID,
@@ -52,8 +52,9 @@ export const botConfig = {
 
     // Command prefix for text-based commands (e.g., "!" for "!ping").
     // Supports both slash commands and prefix commands.
-    prefix: process.env.PREFIX || "!",
-  },,
+    prefix: process.env.PREFIX || ",",
+  },
+    
 
   // =========================
   // APPLICATIONS SYSTEM
@@ -372,15 +373,15 @@ export const botConfig = {
     // Welcome template posted when a user joins.
     // Placeholders: {user}, {server}, {memberCount}
     defaultWelcomeMessage:
-      "Welcome {user} to {server}! We now have {memberCount} members!",
+      " sup {user}",
     // Goodbye template posted when a user leaves.
     // Placeholders: {user}, {memberCount}
     defaultGoodbyeMessage:
-      "{user} has left the server. We now have {memberCount} members.",
+      "{user} has left",
     // Channel ID for welcome messages.
-    defaultWelcomeChannel: null,
+    defaultWelcomeChannel: yes,
     // Channel ID for goodbye messages.
-    defaultGoodbyeChannel: null,
+    defaultGoodbyeChannel: yes,
   },
 
   // =========================
