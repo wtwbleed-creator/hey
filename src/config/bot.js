@@ -11,7 +11,7 @@ export const botConfig = {
   // - "invisible" = appears offline
   presence: {
     // Current online state shown on Discord.
-    status: "idle",
+    status: "online",
 
     // Activity lines shown under the bot name.
     // `type` number mapping from Discord:
@@ -23,8 +23,8 @@ export const botConfig = {
     // 5 = Competing
     activities: [
       {
-        name: "stalking", // required by Discord API, not shown in the client
-        state: "wsp",     // this is what people actually see
+        name: "wsp", // required by Discord API, not shown in the client
+        state: "stalking",     // this is what people actually see
         type: 4,               // Custom
       },
     ],
@@ -52,9 +52,8 @@ export const botConfig = {
 
     // Command prefix for text-based commands (e.g., "!" for "!ping").
     // Supports both slash commands and prefix commands.
-    prefix: process.env.PREFIX || ",",
+    prefix: process.env.PREFIX || "!",
   },
-    
 
   // =========================
   // APPLICATIONS SYSTEM
@@ -95,7 +94,7 @@ export const botConfig = {
     colors: {
       // Main brand colors.
       primary: "#2c2f33",
-      secondary: "#2F3136",
+      secondary: "#2c2f33",
 
       // Standard status colors for success/error/warning/info messages.
       success: "#57F287",
@@ -373,15 +372,15 @@ export const botConfig = {
     // Welcome template posted when a user joins.
     // Placeholders: {user}, {server}, {memberCount}
     defaultWelcomeMessage:
-      " sup {user}",
+      "Welcome {user} to {server}! We now have {memberCount} members!",
     // Goodbye template posted when a user leaves.
     // Placeholders: {user}, {memberCount}
     defaultGoodbyeMessage:
-      "{user} has left",
+      "{user} has left the server. We now have {memberCount} members.",
     // Channel ID for welcome messages.
-    defaultWelcomeChannel: yes,
+    defaultWelcomeChannel: null,
     // Channel ID for goodbye messages.
-    defaultGoodbyeChannel: yes,
+    defaultGoodbyeChannel: null,
   },
 
   // =========================
